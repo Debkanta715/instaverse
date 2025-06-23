@@ -11,6 +11,8 @@ import UploadPost from './pages/UploadPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import DebBot from './components/Chatbot/DebBot';
+import ProfilePage from './pages/ProfilePage';
+import ProtectedRoute from './routes/ProtectedRoute';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,10 +24,32 @@ function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Feed />} />
-            <Route path="/my-posts" element={<MyPosts />} />
-            <Route path="/upload" element={<UploadPost />} />
+            <Route
+              path="/my-posts"
+              element={
+                <ProtectedRoute>
+                  <MyPosts />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/upload"
+              element={
+                <ProtectedRoute>
+                  <UploadPost />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <ProfilePage />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />

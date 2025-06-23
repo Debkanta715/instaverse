@@ -1,13 +1,11 @@
 import React from 'react';
 // import Feed from '../components/Feed/Feed';
 
-const HomePage = () => {
+export default function HomePage() {
   return (
-    <div className="max-w-2xl mx-auto py-8">
-      {/* <Feed /> */}
-      <div className="text-center text-gray-400">Feed will appear here.</div>
+    <div className="p-6 text-center">
+      <h2 className="text-2xl font-bold mb-4">Welcome to InstaVerse 🎉</h2>
+      <p>This is your dashboard. Post, explore, and connect!</p>
     </div>
   );
-};
-
-export default HomePage; 
+} 
