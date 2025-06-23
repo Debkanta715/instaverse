@@ -1,10 +1,6 @@
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
-import UploadPage from "./pages/UploadPage";
-import HomePage from "./pages/HomePage";
-import ProtectedRoute from "./routes/ProtectedRoute";
-import DebBot from "./components/Chatbot/DebBot";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
