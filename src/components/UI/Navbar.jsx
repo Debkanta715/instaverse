@@ -1,7 +1,7 @@
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
-import { db } from "../../utils/firebase";
+import { auth, db, provider, storage } from "../../utils/firebase";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
